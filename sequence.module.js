@@ -127,4 +127,4 @@ class Sequence extends Meta {
 	}
 }
 
-module.exports = sequence;
+module.exports = Sequence;
