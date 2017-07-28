@@ -48,7 +48,7 @@
 	@end-submodule-configuration
 
 	@submodule-documentation:
-		String class wrapper.
+		Sequence class wrapper.
 	@end-submodule-documentation
 
 	@include:
