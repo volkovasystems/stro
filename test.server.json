@@ -1,0 +1,32 @@
+{
+	"stats": {
+		"suites": 2,
+		"tests": 1,
+		"passes": 1,
+		"pending": 0,
+		"failures": 0,
+		"start": "2017-08-01T09:27:19.863Z",
+		"end": "2017-08-01T09:27:19.869Z",
+		"duration": 6
+	},
+	"tests": [
+		{
+			"title": "should return Sequence instance",
+			"fullTitle": "stro `stro( 'hello' )` should return Sequence instance",
+			"duration": 2,
+			"currentRetry": 0,
+			"err": {}
+		}
+	],
+	"pending": [],
+	"failures": [],
+	"passes": [
+		{
+			"title": "should return Sequence instance",
+			"fullTitle": "stro `stro( 'hello' )` should return Sequence instance",
+			"duration": 2,
+			"currentRetry": 0,
+			"err": {}
+		}
+	]
+}

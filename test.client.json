@@ -1,0 +1,84 @@
+{
+	"state": {
+		"passed": 1,
+		"failed": 0,
+		"skipped": 0
+	},
+	"start": "2017-08-01T09:27:22.916Z",
+	"end": "2017-08-01T09:27:54.334Z",
+	"capabilities": {
+		"browserName": "chrome",
+		"chromeOptions": {
+			"args": [
+				"disable-gpu",
+				"headless"
+			]
+		},
+		"proxy": null
+	},
+	"host": "127.0.0.1",
+	"port": 4444,
+	"baseUrl": "http://localhost",
+	"framework": "mocha",
+	"mochaOpts": {
+		"timeout": 10000,
+		"ui": "bdd"
+	},
+	"suites": [
+		{
+			"name": "stro",
+			"duration": 0,
+			"start": "2017-08-01T09:27:51.716Z",
+			"tests": [],
+			"hooks": []
+		},
+		{
+			"name": "stro",
+			"duration": 2385,
+			"start": "2017-08-01T09:27:51.717Z",
+			"end": "2017-08-01T09:27:54.102Z",
+			"tests": [],
+			"hooks": [
+				{
+					"start": "2017-08-01T09:27:51.720Z",
+					"end": "2017-08-01T09:27:51.721Z",
+					"duration": 1,
+					"title": "\"before each\" hook",
+					"associatedSuite": "stro",
+					"associatedTest": "should return Sequence instance"
+				},
+				{
+					"start": "2017-08-01T09:27:54.101Z",
+					"end": "2017-08-01T09:27:54.101Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "stro",
+					"associatedTest": "should return Sequence instance"
+				},
+				{
+					"start": "2017-08-01T09:27:54.102Z",
+					"end": "2017-08-01T09:27:54.102Z",
+					"duration": 0,
+					"title": "\"after all\" hook",
+					"associatedSuite": "stro"
+				}
+			]
+		},
+		{
+			"name": "`stro( 'hello' )`",
+			"duration": 2384,
+			"start": "2017-08-01T09:27:51.718Z",
+			"end": "2017-08-01T09:27:54.102Z",
+			"tests": [
+				{
+					"name": "should return Sequence instance",
+					"start": "2017-08-01T09:27:51.719Z",
+					"end": "2017-08-01T09:27:54.101Z",
+					"duration": 2382,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		}
+	]
+}
