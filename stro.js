@@ -67,8 +67,20 @@ const Sequence = require( "./sequence.js" );
 
 
 
-const stro = function stro( ){
-	return Meta.create( Sequence, sequence );
+const stro = function stro( entity ){
+	/*;
+		@meta-configuration:
+			{
+				"entity:required": "string"
+			}
+		@end-meta-configuration
+	*/
+
+	if( typeof entity != "string" ){
+		throw new Error( "invalid string entity" );
+	}
+
+	return Meta.create( Sequence, entity );
 };
 
 harden( "Sequence", Sequence, stro );

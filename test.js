@@ -57,13 +57,9 @@ const assert = require( "should" );
 const stro = require( "./stro.js" );
 //: @end-server
 
-//: @client:
-const stro = require( "./stro.support.js" );
-//: @end-client
 
-//: @bridge:
-const path = require( "path" );
-//: @end-bridge
+
+
 
 
 //: @server:
@@ -87,45 +83,7 @@ describe( "stro", ( ) => {
 //: @end-server
 
 
-//: @client:
-
-describe( "stro", ( ) => {
-
-	describe( "`stro( 'hello' )`", ( ) => {
-		it( "should return Sequence instance", ( ) => {
-			let data = stro( "hello" );
-
-			assert.equal( typeof data, "object" );
-
-			assert.equal( data.constructor.name, "Sequence" );
-
-			assert.equal( data.valueOf( ), "hello" );
-		} );
-	} );
-
-} );
-
-//: @end-client
 
 
-//: @bridge:
 
-describe( "stro", ( ) => {
 
-	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
-
-	describe( "`stro( 'hello' )`", ( ) => {
-		it( "should return Sequence instance", ( ) => {
-			//: @ignore:
-			assert.equal( browser.url( bridgeURL ).execute( function( ){ return typeof stro( "hello" ); } ).value, "object" );
-			//: @end-ignore
-
-			assert.equal( browser.url( bridgeURL ).execute( ( ) => stro( "hello" ).constructor.name ).value, "Sequence" );
-
-			assert.equal( browser.url( bridgeURL ).execute( ( ) => stro( "hello" ).valueOf( ) ).value, "hello" );
-		} );
-	} );
-
-} );
-
-//: @end-bridge

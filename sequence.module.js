@@ -60,16 +60,18 @@
 
 const Meta = require( "ehm" )( );
 
-const EMPTY_STRING = "";
-const SEQUENCE = String;
-const SERIALIZE_SEQUENCE_TAG = "[object String:String]";
-const META_SERIALIZE_SEQUENCE_TAG = Meta.create( SEQUENCE ).serialize( );
+const STRING_NAME = "String";
+const STRING_TYPE = "string";
+
+const SERIALIZE_STRING_TAG_PATTERN = /^\[string String(?:\:(.+?))?\]$/;
 
 class Sequence extends Meta {
 	static [ Symbol.hasInstance ]( instance ){
 		return (
-			instance === SEQUENCE ||
-			Meta.instanceOf( instance, this )
+			typeof instance == STRING_TYPE
+			|| instance instanceof String
+			|| typeof instance == "function" && instance.name === STRING_NAME
+			|| Meta.instanceOf( instance, this )
 		);
 	}
 
@@ -84,27 +86,56 @@ class Sequence extends Meta {
 			@end-meta-configuration
 		*/
 
-		return Meta.create( this, SEQUENCE );
+		let entity = Meta.deserialize( data, parser, this );
+
+		if( entity.isCorrupted( ) ){
+			return entity.revert( );
+		}
+
+		return entity;
 	}
 
-	constructor( ){
-		super( SEQUENCE, "Sequence" );
+	static isCompatible( tag ){
+		/*;
+			@meta-configuration:
+				{
+					"tag": "string"
+				}
+			@end-meta-configuration
+		*/
+
+		if( typeof tag != "string" ){
+			return false;
+		}
+
+		return SERIALIZE_STRING_TAG_PATTERN.test( tag );
 	}
 
-	get [ Meta.OBJECT ]( ){
-		return EMPTY_STRING;
+	constructor( entity ){
+		super( entity, STRING_NAME );
+	}
+
+	check( entity ){
+		return (
+			typeof entity == STRING_TYPE
+			|| entity instanceof String
+		);
 	}
 
 	get [ Meta.BOOLEAN ]( ){
+		if( this.valueOf( ).length > 0 ){
+			return true;
+		}
+
 		return false;
 	}
 
 	get [ Meta.STRING ]( ){
-		return EMPTY_STRING;
+		return this.valueOf( );
 	}
 
 	get [ Meta.NUMBER ]( ){
-		return 0;
+		return this.valueOf( ).length;
 	}
 
 	serialize( parser ){
@@ -116,14 +147,7 @@ class Sequence extends Meta {
 			@end-meta-configuration
 		*/
 
-		return SERIALIZE_SEQUENCE_TAG;
-	}
-
-	isCompatible( tag ){
-		return (
-			tag === SERIALIZE_SEQUENCE_TAG
-			|| tag === META_SERIALIZE_SEQUENCE_TAG
-		);
+		return Meta.create( this.valueOf( ) ).serialize( parser );
 	}
 }
 
