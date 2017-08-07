@@ -5,15 +5,15 @@
 		"passes": 1,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-08-02T17:44:35.288Z",
-		"end": "2017-08-02T17:44:35.298Z",
-		"duration": 10
+		"start": "2017-08-07T13:31:01.668Z",
+		"end": "2017-08-07T13:31:01.673Z",
+		"duration": 5
 	},
 	"tests": [
 		{
 			"title": "should return Sequence instance",
 			"fullTitle": "stro `stro( 'hello' )` should return Sequence instance",
-			"duration": 4,
+			"duration": 2,
 			"currentRetry": 0,
 			"err": {}
 		}
@@ -24,7 +24,7 @@
 		{
 			"title": "should return Sequence instance",
 			"fullTitle": "stro `stro( 'hello' )` should return Sequence instance",
-			"duration": 4,
+			"duration": 2,
 			"currentRetry": 0,
 			"err": {}
 		}

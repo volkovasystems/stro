@@ -4,8 +4,8 @@
 		"failed": 0,
 		"skipped": 0
 	},
-	"start": "2017-08-02T17:44:38.241Z",
-	"end": "2017-08-02T17:45:00.091Z",
+	"start": "2017-08-07T13:31:02.751Z",
+	"end": "2017-08-07T13:32:01.344Z",
 	"capabilities": {
 		"browserName": "chrome",
 		"chromeOptions": {
@@ -28,37 +28,37 @@
 		{
 			"name": "stro",
 			"duration": 0,
-			"start": "2017-08-02T17:44:59.194Z",
+			"start": "2017-08-07T13:31:57.401Z",
 			"tests": [],
 			"hooks": []
 		},
 		{
 			"name": "stro",
-			"duration": 715,
-			"start": "2017-08-02T17:44:59.195Z",
-			"end": "2017-08-02T17:44:59.910Z",
+			"duration": 3763,
+			"start": "2017-08-07T13:31:57.402Z",
+			"end": "2017-08-07T13:32:01.165Z",
 			"tests": [],
 			"hooks": [
 				{
-					"start": "2017-08-02T17:44:59.196Z",
-					"end": "2017-08-02T17:44:59.197Z",
-					"duration": 1,
+					"start": "2017-08-07T13:31:57.403Z",
+					"end": "2017-08-07T13:31:57.403Z",
+					"duration": 0,
 					"title": "\"before each\" hook",
 					"associatedSuite": "stro",
 					"associatedTest": "should return Sequence instance"
 				},
 				{
-					"start": "2017-08-02T17:44:59.907Z",
-					"end": "2017-08-02T17:44:59.909Z",
-					"duration": 2,
+					"start": "2017-08-07T13:32:01.164Z",
+					"end": "2017-08-07T13:32:01.164Z",
+					"duration": 0,
 					"title": "\"after each\" hook",
 					"associatedSuite": "stro",
 					"associatedTest": "should return Sequence instance"
 				},
 				{
-					"start": "2017-08-02T17:44:59.910Z",
-					"end": "2017-08-02T17:44:59.911Z",
-					"duration": 1,
+					"start": "2017-08-07T13:32:01.165Z",
+					"end": "2017-08-07T13:32:01.165Z",
+					"duration": 0,
 					"title": "\"after all\" hook",
 					"associatedSuite": "stro"
 				}
@@ -66,15 +66,15 @@
 		},
 		{
 			"name": "`stro( 'hello' )`",
-			"duration": 715,
-			"start": "2017-08-02T17:44:59.195Z",
-			"end": "2017-08-02T17:44:59.910Z",
+			"duration": 3763,
+			"start": "2017-08-07T13:31:57.402Z",
+			"end": "2017-08-07T13:32:01.165Z",
 			"tests": [
 				{
 					"name": "should return Sequence instance",
-					"start": "2017-08-02T17:44:59.196Z",
-					"end": "2017-08-02T17:44:59.907Z",
-					"duration": 711,
+					"start": "2017-08-07T13:31:57.403Z",
+					"end": "2017-08-07T13:32:01.163Z",
+					"duration": 3760,
 					"state": "pass"
 				}
 			],
