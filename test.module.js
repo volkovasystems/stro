@@ -51,7 +51,7 @@
 	@end-include
 */
 
-const assert = require( "should" );
+const assert = require( "should/as-function" );
 
 //: @server:
 const stro = require( "./stro.js" );
@@ -82,6 +82,50 @@ describe( "stro", ( ) => {
 		} );
 	} );
 
+	describe( "`stro( 'hello' ).toString( )`", ( ) => {
+		it( "should return string type", ( ) => {
+			let data = stro( "hello" );
+
+			assert.equal( data.toString( ), "hello" );
+		} );
+	} );
+
+	describe( "`stro( 'hello' ).toNumber( )`", ( ) => {
+		it( "should return number type", ( ) => {
+			let data = stro( "hello" );
+
+			assert.equal( data.toNumber( ), 5 );
+		} );
+	} );
+
+	describe( "`stro( 'hello' ).toBoolean( )`", ( ) => {
+		it( "should return number type", ( ) => {
+			let data = stro( "hello" );
+
+			assert.equal( data.toBoolean( ), true );
+		} );
+	} );
+
+	describe( "`stro( 'hello' ).toObject( )`", ( ) => {
+		it( "should return number type", ( ) => {
+			let data = stro( "hello" );
+
+			let descriptor = data.toObject( );
+
+			assert.equal( "type" in descriptor, true );
+
+			assert.equal( "name" in descriptor, true );
+
+			assert.equal( "value" in descriptor, true );
+
+			assert.equal( "format" in descriptor, true );
+
+			assert.deepEqual( descriptor,
+				{ "type": "string", "name": "String", "value": "[string String:data:text/string;base64,aGVsbG8%3D]", "format": "data-url-tag" } );
+
+		} );
+	} );
+
 } );
 
 //: @end-server
@@ -100,6 +144,50 @@ describe( "stro", ( ) => {
 			assert.equal( data.constructor.name, "Sequence" );
 
 			assert.equal( data.valueOf( ), "hello" );
+		} );
+	} );
+
+	describe( "`stro( 'hello' ).toString( )`", ( ) => {
+		it( "should return string type", ( ) => {
+			let data = stro( "hello" );
+
+			assert.equal( data.toString( ), "hello" );
+		} );
+	} );
+
+	describe( "`stro( 'hello' ).toNumber( )`", ( ) => {
+		it( "should return number type", ( ) => {
+			let data = stro( "hello" );
+
+			assert.equal( data.toNumber( ), 5 );
+		} );
+	} );
+
+	describe( "`stro( 'hello' ).toBoolean( )`", ( ) => {
+		it( "should return number type", ( ) => {
+			let data = stro( "hello" );
+
+			assert.equal( data.toBoolean( ), true );
+		} );
+	} );
+
+	describe( "`stro( 'hello' ).toObject( )`", ( ) => {
+		it( "should return number type", ( ) => {
+			let data = stro( "hello" );
+
+			let descriptor = data.toObject( );
+
+			assert.equal( "type" in descriptor, true );
+
+			assert.equal( "name" in descriptor, true );
+
+			assert.equal( "value" in descriptor, true );
+
+			assert.equal( "format" in descriptor, true );
+
+			assert.deepEqual( descriptor,
+				{ "type": "string", "name": "String", "value": "[string String:data:text/string;base64,aGVsbG8%3D]", "format": "data-url-tag" } );
+
 		} );
 	} );
 
@@ -123,6 +211,90 @@ describe( "stro", ( ) => {
 			assert.equal( browser.url( bridgeURL ).execute( ( ) => stro( "hello" ).constructor.name ).value, "Sequence" );
 
 			assert.equal( browser.url( bridgeURL ).execute( ( ) => stro( "hello" ).valueOf( ) ).value, "hello" );
+		} );
+	} );
+
+	describe( "`stro( 'hello' ).toString( )`", ( ) => {
+		it( "should return string type", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let data = stro( "hello" );
+
+					return data.toString( );
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.equal( result, "hello" );
+		} );
+	} );
+
+	describe( "`stro( 'hello' ).toNumber( )`", ( ) => {
+		it( "should return number type", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let data = stro( "hello" );
+
+					return data.toNumber( );
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.equal( result, 5 );
+		} );
+	} );
+
+	describe( "`stro( 'hello' ).toBoolean( )`", ( ) => {
+		it( "should return number type", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let data = stro( "hello" );
+
+					return data.toBoolean( );
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.equal( result, true );
+		} );
+	} );
+
+	describe( "`stro( 'hello' ).toObject( )`", ( ) => {
+		it( "should return number type", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let data = stro( "hello" );
+
+					return JSON.stringify( data.toObject( ) );
+				}
+
+			).value;
+			//: @end-ignore
+
+			let descriptor = JSON.parse( result );
+
+			assert.equal( "type" in descriptor, true );
+
+			assert.equal( "name" in descriptor, true );
+
+			assert.equal( "value" in descriptor, true );
+
+			assert.equal( "format" in descriptor, true );
+
+			assert.deepEqual( descriptor,
+				{ "type": "string", "name": "String", "value": "[string String:data:text/string;base64,aGVsbG8%3D]", "format": "data-url-tag" } );
+
 		} );
 	} );
 
