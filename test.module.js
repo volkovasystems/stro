@@ -84,33 +84,37 @@ describe( "stro", ( ) => {
 
 	describe( "`stro( 'hello' ).toString( )`", ( ) => {
 		it( "should return string type", ( ) => {
-			let data = stro( "hello" );
+			let data = stro( "hello" ).toString( );
 
-			assert.equal( data.toString( ), "hello" );
+			assert.equal( typeof data, "string" );
+
+			assert.equal( data, "hello" );
 		} );
 	} );
 
 	describe( "`stro( 'hello' ).toNumber( )`", ( ) => {
 		it( "should return number type", ( ) => {
-			let data = stro( "hello" );
+			let data = stro( "hello" ).toNumber( );
 
-			assert.equal( data.toNumber( ), 5 );
+			assert.equal( typeof data, "number" );
+
+			assert.equal( data, 5 );
 		} );
 	} );
 
 	describe( "`stro( 'hello' ).toBoolean( )`", ( ) => {
-		it( "should return number type", ( ) => {
-			let data = stro( "hello" );
+		it( "should return boolean type", ( ) => {
+			let data = stro( "hello" ).toBoolean( );
 
-			assert.equal( data.toBoolean( ), true );
+			assert.equal( typeof data, "boolean" );
+
+			assert.equal( data, true );
 		} );
 	} );
 
 	describe( "`stro( 'hello' ).toObject( )`", ( ) => {
-		it( "should return number type", ( ) => {
-			let data = stro( "hello" );
-
-			let descriptor = data.toObject( );
+		it( "should return object type", ( ) => {
+			let descriptor = stro( "hello" ).toObject( );
 
 			assert.equal( "type" in descriptor, true );
 
@@ -149,33 +153,37 @@ describe( "stro", ( ) => {
 
 	describe( "`stro( 'hello' ).toString( )`", ( ) => {
 		it( "should return string type", ( ) => {
-			let data = stro( "hello" );
+			let data = stro( "hello" ).toString( );
 
-			assert.equal( data.toString( ), "hello" );
+			assert.equal( typeof data, "string" );
+
+			assert.equal( data, "hello" );
 		} );
 	} );
 
 	describe( "`stro( 'hello' ).toNumber( )`", ( ) => {
 		it( "should return number type", ( ) => {
-			let data = stro( "hello" );
+			let data = stro( "hello" ).toNumber( );
 
-			assert.equal( data.toNumber( ), 5 );
+			assert.equal( typeof data, "number" );
+
+			assert.equal( data, 5 );
 		} );
 	} );
 
 	describe( "`stro( 'hello' ).toBoolean( )`", ( ) => {
-		it( "should return number type", ( ) => {
-			let data = stro( "hello" );
+		it( "should return boolean type", ( ) => {
+			let data = stro( "hello" ).toBoolean( );
 
-			assert.equal( data.toBoolean( ), true );
+			assert.equal( typeof data, "boolean" );
+
+			assert.equal( data, true );
 		} );
 	} );
 
 	describe( "`stro( 'hello' ).toObject( )`", ( ) => {
-		it( "should return number type", ( ) => {
-			let data = stro( "hello" );
-
-			let descriptor = data.toObject( );
+		it( "should return object type", ( ) => {
+			let descriptor = stro( "hello" ).toObject( );
 
 			assert.equal( "type" in descriptor, true );
 
@@ -220,9 +228,7 @@ describe( "stro", ( ) => {
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
-					let data = stro( "hello" );
-
-					return data.toString( );
+					return stro( "hello" ).toString( );
 				}
 
 			).value;
@@ -238,9 +244,7 @@ describe( "stro", ( ) => {
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
-					let data = stro( "hello" );
-
-					return data.toNumber( );
+					return stro( "hello" ).toNumber( );
 				}
 
 			).value;
@@ -256,9 +260,7 @@ describe( "stro", ( ) => {
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
-					let data = stro( "hello" );
-
-					return data.toBoolean( );
+					return stro( "hello" ).toBoolean( );
 				}
 
 			).value;
@@ -274,9 +276,7 @@ describe( "stro", ( ) => {
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
-					let data = stro( "hello" );
-
-					return JSON.stringify( data.toObject( ) );
+					return JSON.stringify( stro( "hello" ).toObject( ) );
 				}
 
 			).value;
