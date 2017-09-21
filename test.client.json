@@ -1,11 +1,11 @@
 {
 	"state": {
-		"passed": 1,
+		"passed": 5,
 		"failed": 0,
 		"skipped": 0
 	},
-	"start": "2017-08-07T13:31:02.751Z",
-	"end": "2017-08-07T13:32:01.344Z",
+	"start": "2017-09-21T06:00:05.602Z",
+	"end": "2017-09-21T06:01:37.380Z",
 	"capabilities": {
 		"browserName": "chrome",
 		"chromeOptions": {
@@ -28,37 +28,101 @@
 		{
 			"name": "stro",
 			"duration": 0,
-			"start": "2017-08-07T13:31:57.401Z",
+			"start": "2017-09-21T06:01:35.470Z",
 			"tests": [],
 			"hooks": []
 		},
 		{
 			"name": "stro",
-			"duration": 3763,
-			"start": "2017-08-07T13:31:57.402Z",
-			"end": "2017-08-07T13:32:01.165Z",
+			"duration": 1734,
+			"start": "2017-09-21T06:01:35.470Z",
+			"end": "2017-09-21T06:01:37.204Z",
 			"tests": [],
 			"hooks": [
 				{
-					"start": "2017-08-07T13:31:57.403Z",
-					"end": "2017-08-07T13:31:57.403Z",
-					"duration": 0,
+					"start": "2017-09-21T06:01:35.472Z",
+					"end": "2017-09-21T06:01:35.473Z",
+					"duration": 1,
 					"title": "\"before each\" hook",
 					"associatedSuite": "stro",
 					"associatedTest": "should return Sequence instance"
 				},
 				{
-					"start": "2017-08-07T13:32:01.164Z",
-					"end": "2017-08-07T13:32:01.164Z",
-					"duration": 0,
+					"start": "2017-09-21T06:01:36.949Z",
+					"end": "2017-09-21T06:01:36.950Z",
+					"duration": 1,
 					"title": "\"after each\" hook",
 					"associatedSuite": "stro",
 					"associatedTest": "should return Sequence instance"
 				},
 				{
-					"start": "2017-08-07T13:32:01.165Z",
-					"end": "2017-08-07T13:32:01.165Z",
+					"start": "2017-09-21T06:01:36.951Z",
+					"end": "2017-09-21T06:01:36.952Z",
+					"duration": 1,
+					"title": "\"before each\" hook",
+					"associatedSuite": "stro",
+					"associatedTest": "should return string type"
+				},
+				{
+					"start": "2017-09-21T06:01:37.030Z",
+					"end": "2017-09-21T06:01:37.030Z",
 					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "stro",
+					"associatedTest": "should return string type"
+				},
+				{
+					"start": "2017-09-21T06:01:37.031Z",
+					"end": "2017-09-21T06:01:37.031Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "stro",
+					"associatedTest": "should return number type"
+				},
+				{
+					"start": "2017-09-21T06:01:37.090Z",
+					"end": "2017-09-21T06:01:37.090Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "stro",
+					"associatedTest": "should return number type"
+				},
+				{
+					"start": "2017-09-21T06:01:37.090Z",
+					"end": "2017-09-21T06:01:37.090Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "stro",
+					"associatedTest": "should return number type"
+				},
+				{
+					"start": "2017-09-21T06:01:37.147Z",
+					"end": "2017-09-21T06:01:37.147Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "stro",
+					"associatedTest": "should return number type"
+				},
+				{
+					"start": "2017-09-21T06:01:37.147Z",
+					"end": "2017-09-21T06:01:37.147Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "stro",
+					"associatedTest": "should return number type"
+				},
+				{
+					"start": "2017-09-21T06:01:37.204Z",
+					"end": "2017-09-21T06:01:37.204Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "stro",
+					"associatedTest": "should return number type"
+				},
+				{
+					"start": "2017-09-21T06:01:37.204Z",
+					"end": "2017-09-21T06:01:37.205Z",
+					"duration": 1,
 					"title": "\"after all\" hook",
 					"associatedSuite": "stro"
 				}
@@ -66,15 +130,79 @@
 		},
 		{
 			"name": "`stro( 'hello' )`",
-			"duration": 3763,
-			"start": "2017-08-07T13:31:57.402Z",
-			"end": "2017-08-07T13:32:01.165Z",
+			"duration": 1480,
+			"start": "2017-09-21T06:01:35.471Z",
+			"end": "2017-09-21T06:01:36.951Z",
 			"tests": [
 				{
 					"name": "should return Sequence instance",
-					"start": "2017-08-07T13:31:57.403Z",
-					"end": "2017-08-07T13:32:01.163Z",
-					"duration": 3760,
+					"start": "2017-09-21T06:01:35.471Z",
+					"end": "2017-09-21T06:01:36.949Z",
+					"duration": 1478,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`stro( 'hello' ).toString( )`",
+			"duration": 79,
+			"start": "2017-09-21T06:01:36.951Z",
+			"end": "2017-09-21T06:01:37.030Z",
+			"tests": [
+				{
+					"name": "should return string type",
+					"start": "2017-09-21T06:01:36.951Z",
+					"end": "2017-09-21T06:01:37.030Z",
+					"duration": 79,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`stro( 'hello' ).toNumber( )`",
+			"duration": 59,
+			"start": "2017-09-21T06:01:37.031Z",
+			"end": "2017-09-21T06:01:37.090Z",
+			"tests": [
+				{
+					"name": "should return number type",
+					"start": "2017-09-21T06:01:37.031Z",
+					"end": "2017-09-21T06:01:37.090Z",
+					"duration": 59,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`stro( 'hello' ).toBoolean( )`",
+			"duration": 57,
+			"start": "2017-09-21T06:01:37.090Z",
+			"end": "2017-09-21T06:01:37.147Z",
+			"tests": [
+				{
+					"name": "should return number type",
+					"start": "2017-09-21T06:01:37.090Z",
+					"end": "2017-09-21T06:01:37.147Z",
+					"duration": 57,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`stro( 'hello' ).toObject( )`",
+			"duration": 57,
+			"start": "2017-09-21T06:01:37.147Z",
+			"end": "2017-09-21T06:01:37.204Z",
+			"tests": [
+				{
+					"name": "should return number type",
+					"start": "2017-09-21T06:01:37.147Z",
+					"end": "2017-09-21T06:01:37.204Z",
+					"duration": 57,
 					"state": "pass"
 				}
 			],

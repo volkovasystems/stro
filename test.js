@@ -51,7 +51,7 @@
 	@end-include
 */
 
-const assert = require( "should" );
+const assert = require( "should/as-function" );
 
 //: @server:
 const stro = require( "./stro.js" );
@@ -75,6 +75,54 @@ describe( "stro", ( ) => {
 			assert.equal( data.constructor.name, "Sequence" );
 
 			assert.equal( data.valueOf( ), "hello" );
+		} );
+	} );
+
+	describe( "`stro( 'hello' ).toString( )`", ( ) => {
+		it( "should return string type", ( ) => {
+			let data = stro( "hello" ).toString( );
+
+			assert.equal( typeof data, "string" );
+
+			assert.equal( data, "hello" );
+		} );
+	} );
+
+	describe( "`stro( 'hello' ).toNumber( )`", ( ) => {
+		it( "should return number type", ( ) => {
+			let data = stro( "hello" ).toNumber( );
+
+			assert.equal( typeof data, "number" );
+
+			assert.equal( data, 5 );
+		} );
+	} );
+
+	describe( "`stro( 'hello' ).toBoolean( )`", ( ) => {
+		it( "should return boolean type", ( ) => {
+			let data = stro( "hello" ).toBoolean( );
+
+			assert.equal( typeof data, "boolean" );
+
+			assert.equal( data, true );
+		} );
+	} );
+
+	describe( "`stro( 'hello' ).toObject( )`", ( ) => {
+		it( "should return object type", ( ) => {
+			let descriptor = stro( "hello" ).toObject( );
+
+			assert.equal( "type" in descriptor, true );
+
+			assert.equal( "name" in descriptor, true );
+
+			assert.equal( "value" in descriptor, true );
+
+			assert.equal( "format" in descriptor, true );
+
+			assert.deepEqual( descriptor,
+				{ "type": "string", "name": "String", "value": "[string String:data:text/string;base64,aGVsbG8%3D]", "format": "data-url-tag" } );
+
 		} );
 	} );
 
